@@ -76,6 +76,3 @@ print(False or True)
 
 print(20 / 2.0)
 print(20 / 3.0, 20 % 3, 20 // 3)
-
-
-
