@@ -3,7 +3,7 @@
 fileName = 'test.txt'
 f4 = open(fileName)
 for line in f4.readlines():
-    print(line)
+    print(line.strip('\n'))  # 去掉换行符
 f4.close()
 
 # seek 函数
