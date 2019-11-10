@@ -20,3 +20,4 @@ f5.seek(2, 0)  # offset=0 代表从当前位置偏移，f5.seek(2, 0)表示从�
 print(f5.tell())
 f5.read(1)
 print(f5.tell())
+f5.close()
