@@ -99,3 +99,26 @@ def frange(start, stop, step):
 
 for i in frange(1, 10, 1.5):
     print(i)
+
+
+# lambda
+# 示例1：下面两个函数是等价的
+def true():
+    return True
+
+
+# 省略函数名
+func1 = lambda: True
+print(func1())  # True
+
+
+# 2
+def add(a, b):
+    return a + b
+
+
+# 省略函数名、参数，冒号后面是返回值
+func2 = lambda a, b: a + b
+
+print(add(1, 3))  # 4
+print(func2(1, 3))  # 4
