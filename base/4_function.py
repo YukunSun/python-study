@@ -77,5 +77,25 @@ def fact_iter(num, product):
 
 print(fact2(100))
 
-# 可变参数
-print()
+# 函数的迭代器与生成器
+lst = [1, 2, 3]
+it = iter(lst)
+print(next(it))
+print(next(it))
+print(next(it))
+
+# start=1,stop=10,step=2，但是 step 必须为整数
+for i in range(1, 10, 2):
+    print(i)  # 1 3 5 7 9
+
+
+# 自定义一个迭代器，实现 step 可以是 float
+def frange(start, stop, step):
+    x = start
+    while x < stop:
+        yield x
+        x += step
+
+
+for i in frange(1, 10, 1.5):
+    print(i)
