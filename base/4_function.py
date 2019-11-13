@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-
-
+# 1.函数的定义
 def my_func(x):
     if x < 0:
         return -x
@@ -11,6 +10,18 @@ def my_func(x):
 print(my_func(-2))
 
 
+# 2.
+def func(a, b, c):
+    print('a=%s' % a)
+    print('b=%s' % b)
+    print('c=%s' % c)
+
+
+func(1, 2, 3)
+# 可以颠倒参数的顺序
+func(1, c=3, b=2)
+
+
 def calc(*numbers):
     sum = 0
     for n in numbers:
@@ -18,8 +29,8 @@ def calc(*numbers):
     return sum
 
 
-print(calc(1,))
-print(calc(1,2))
+print(calc(1, ))
+print(calc(1, 2))
 
 
 def enroll(name, gender, age=6, city='Beijing'):
@@ -29,7 +40,7 @@ def enroll(name, gender, age=6, city='Beijing'):
     print('city:', city)
 
 
-enroll(1,2)
+enroll(1, 2)
 
 
 def person(name, age, **kw):
@@ -46,9 +57,10 @@ person('Jack', 24, city='Beijing', addr='Chaoyang', zipcode=123456)
 
 
 def fact(n):
-    if n==1:
+    if n == 1:
         return 1
     return n * fact(n - 1)
+
 
 print(fact(100))
 
@@ -65,3 +77,5 @@ def fact_iter(num, product):
 
 print(fact2(100))
 
+# 可变参数
+print()
