@@ -122,3 +122,37 @@ func2 = lambda a, b: a + b
 
 print(add(1, 3))  # 4
 print(func2(1, 3))  # 4
+
+# 内置函数
+lst2 = [1, 2, 3]
+print(list(filter(lambda x: x > 1, lst2)))  # [2, 3]
+# map：对值依次处理
+print(list(map(lambda x: x * 2, lst2)))  # [2, 4, 6]
+lst3 = [1, 2, 3]
+print(list(map(lambda x, y: x * y, lst2, lst3)))  # [1, 4, 9]
+
+# 内建函数：reduce
+from functools import reduce
+
+# 等价于 (((2+1)+4)+6)
+print(reduce(lambda x, y: x + y, [2, 4, 6], 1))  # 13
+
+# 内建函数:zip
+tpl1 = (1, 2, 3), (4, 5, 6)
+for j in zip(tpl1):
+    print(j)
+# 返回：
+# ((1, 2, 3),)
+# ((4, 5, 6),)
+
+for k in zip((1, 2, 3), (4, 5, 6)):
+    print(k)
+# 返回：
+# (1, 4)
+# (2, 5)
+# (3, 6)
+
+# 实现 key,value 对调
+dct1 = {'k1': 'v1', 'k2': 'v2'}
+dct2 = zip(dct1.values(), dct1.keys())
+print(dict(dct2))
