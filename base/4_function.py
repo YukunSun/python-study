@@ -156,3 +156,67 @@ for k in zip((1, 2, 3), (4, 5, 6)):
 dct1 = {'k1': 'v1', 'k2': 'v2'}
 dct2 = zip(dct1.values(), dct1.keys())
 print(dict(dct2))
+
+
+# 嵌套函数
+def fun():
+    a = 1
+
+    def fun2():
+        nonlocal a  # 使用外层函数的变量a
+        a += 1
+        print("func 2:", a)
+
+    fun2()  # func 2: 2，这里调用 fun2()
+    print("func 1:", a)
+
+
+print(fun())  # func 1: 2
+
+
+# 闭包:内部函数引用外部变量
+def sum(a):
+    def add(b):
+        return a + b
+
+    return add
+
+
+num1 = sum(2)
+num2 = num1(4)
+print(type(num1))  # <class 'function'>
+print(type(num2))  # <class 'int'>
+print(num2)  # 6
+
+
+# 闭包：举例1
+def counter(first):
+    cnt = [first]
+
+    def addOne():
+        cnt[0] += 1
+        return cnt[0]
+
+    return addOne
+
+
+r1 = counter(7)
+print(type(r1))
+print(r1())
+print(counter(10)())
+print(counter(15)())
+
+
+# 闭包 例2
+def fun3(a, b, c):
+    def para(x):
+        return a * x ** 2 + b * x + c
+
+    return para
+
+
+f4 = fun3(1, 2, 3)
+print(f4(1))
+# 如果再想计算 x=2,3 的值，就太方便了
+print(f4(2))
+print(f4(3))
