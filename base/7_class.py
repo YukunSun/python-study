@@ -34,6 +34,39 @@ p2.update_name('tom2')
 p2.print_info()  # player info: tom2 7
 
 
-class Monster:
-    # todo
-    pass
+class Animal:
+    def __init__(self, weight=100):
+        self.weight = weight
+
+    def run(self):
+        print('animal move')
+
+
+# Cat 继承了 Animal，下同
+class Cat(Animal):
+    def __init__(self, weight=50):
+        self.weight = weight
+
+
+class Dog(Animal):
+    def __init__(self, weight=30):
+        super().__init__(weight)  # 可省略的一种写作方式
+
+    def run(self):  # 会覆盖父类的方法
+        print('Dog move')
+
+
+a1 = Animal(99)
+print(a1.weight)
+a1.run()
+
+a2 = Cat(50)
+print(a2.weight)
+a2.run()
+
+a3 = Dog()
+print(a3.weight)
+a3.run()  # Dog move
+
+print(type(a1))  # <class '__main__.Animal'>
+print(isinstance(a1, Animal))  # True
