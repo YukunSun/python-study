@@ -19,6 +19,7 @@ for i in range(1, 6, 1):
     t1.start()
 
 
+# 例3
 class MyThread(threading.Thread):
     def run(self):
         print(threading.current_thread().getName(), 'start')
