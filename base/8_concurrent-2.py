@@ -13,6 +13,7 @@ class ProducerThread(threading.Thread):
         name = threading.current_thread().getName()
         nums = range(10)
         while True:
+            # 随机取一个
             num = random.choice(nums)
             queue.put(num)
             print("producer %s generate: %d" % (name, num))
