@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 import requests
 
-## get
-#url_1 = 'http://httpbin.org/get'
-#data = {'key': 'value', 'timeout': 5}
-#response = requests.get(url_1, data)
-#print(response.text)
+# get
+url_1 = 'http://httpbin.org/get'
+data = {'key': 'value', 'timeout': 5}
+response = requests.get(url_1, data)
+print(response.text)
 
 # post
 url_2 = 'http://httpbin.org/post'
