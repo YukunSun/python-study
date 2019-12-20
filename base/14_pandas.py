@@ -54,10 +54,19 @@ dtype: int64
 '''
 
 # 手动填充值
-arr3 = Series([1, 3, -3], index=['c', 'a', 'b'])
-# todo
+arr3 = Series(['red', 'yellow', 'blue'], index=[0, 2, 4])
+print(arr3)
+print("按照上一个索引填充：", arr3.reindex(range(6), method='ffill'))  # 1,3,5 将会按照上一个索引的值填充
+print("按照后面的索引填充：", arr3.reindex(range(6), method='bfill'))  # 1,3,5 将会按照后一个索引的值填充
 
+# 删除缺省值
+from numpy import nan as NA
 
+arr4 = Series([1, NA, 2])
+print(arr4)
+print("删除 NaN:", arr4.dropna())
+arr5 = Series([1, NA, 2])
+print("对NaN填充0:", arr5.fillna(0))
 
 ############################################################################
 # 2.DataFrame:操作更高维的数组
