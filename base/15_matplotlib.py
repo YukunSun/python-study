@@ -40,5 +40,4 @@ print(iris.head())  # 展示前5行
 iris.plot(kind='scatter', x="120", y="4")  # 展示“120”，“4”两列内容
 plt.show()
 
-# seaborn：一个生成更漂亮图的库
-# todo
+
