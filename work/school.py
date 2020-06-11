@@ -4,7 +4,9 @@ from pandas import DataFrame
 
 work_dir = '~/Desktop/'
 data = pd.read_csv(work_dir + 'ori.csv', sep="\t")
-frame = DataFrame(data, columns=['c1', 'c2'])
+frame = DataFrame(data, columns=['c1', 'c2', 'c8'])
+
+# --------------------school num-----------------
 
 # add column:school_num
 by_province = frame.groupby(['c1', 'c2']).agg(
@@ -31,5 +33,7 @@ df.loc['total_per_province', :] = df.sum(axis=0)
 df.loc[:, 'total_per_week'] = df.sum(axis=1)
 
 # write to csv
-df.to_csv(index=True, path_or_buf=work_dir + 'by_province.csv', header=True)
+df.to_csv(index=True, path_or_buf=work_dir + 'school_num.csv', header=True)
 print('generate success:statics by province')
+
+# ----------------------student num--------------
