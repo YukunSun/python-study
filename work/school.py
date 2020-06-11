@@ -19,7 +19,6 @@ arr = []
 dict_sort = {'一': 1, '二': 2, '三': 3, '四': 4, '五': 5}
 for week, _ in df[0:5].iterrows():
     no = week[1:2]
-    # arr.append(dict_sort[no])
     arr.append(no)
 df.insert(loc=0, column='factor', value=arr)
 list_sorted = ["一", "二", "三", "四", "五"]
