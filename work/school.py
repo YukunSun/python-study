@@ -15,16 +15,6 @@ second_level_idx_series = by_province['school_num']
 df = second_level_idx_series.unstack().fillna(0).astype(int)
 
 # order:add column:factor
-# arr = []
-# dict_sort = {'一': 1, '二': 2, '三': 3, '四': 4, '五': 5}
-# for week, _ in df[0:5].iterrows():
-#     no = week[1:2]
-#     arr.append(dict_sort[no])
-# df.insert(loc=0, column='factor', value=arr)
-# df.sort_values(by='factor')
-# df = df.drop(columns=['factor'])
-
-# way 2
 arr = []
 dict_sort = {'一': 1, '二': 2, '三': 3, '四': 4, '五': 5}
 for week, _ in df[0:5].iterrows():
