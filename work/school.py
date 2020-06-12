@@ -65,7 +65,7 @@ def student_statistics(frame):
 
 
 if __name__ == '__main__':
-    work_dir = '~/Desktop/'
+    work_dir = './'
     data = pd.read_csv(work_dir + 'ori.csv', sep="\t")
     frame = DataFrame(data, columns=['c1', 'c2', 'c8'])
     school_statistics(frame)
